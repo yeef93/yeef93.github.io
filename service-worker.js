@@ -15,7 +15,7 @@ if (workbox) {
     { url: '/pages/lInggris.html', revision: '1' },
     { url: '/pages/saved.html', revision: '1' },
     { url: '/css/materialize.css', revision: '1' },
-    { url: 'css/style.css', revision: '1' },
+    { url: '/css/style.css', revision: '1' },
     { url: '/js/materialize.js', revision: '1' },
     { url: '/js/nav.js', revision: '1' },
     { url: '/js/api.js', revision: '1' },
