@@ -1,21 +1,21 @@
 // REGISTER SERVICE WORKER
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function () {
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
     navigator.serviceWorker
-      .register('service-worker.js')
+      .register("service-worker.js")
       .then(function () {
-        console.log('Registrasi Service Worker berhasil');
+        console.log("Registrasi Service Worker berhasil");
       })
       .catch(function () {
-        console.log('Registrasi Service Worker gagal');
+        console.log("Registrasi Service Worker gagal");
       });
   });
 } else {
-  console.log('Service Worker belum didukung browser ini.');
+  console.log("Service Worker belum didukung browser ini.");
 }
 
 // REQUEST API UNTUK PERTAMA KALI
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   const page = window.location.hash.substr(1);
 
 })
@@ -34,7 +34,7 @@ function urlBase64ToUint8Array(base64String) {
 }
 // Periksa service worker
 if (!('serviceWorker' in navigator)) {
-  console.log('Service worker tidak didukung browser ini.');
+  console.log("Service worker tidak didukung browser ini.");
 } else {
   requestPermission();
 }
@@ -42,11 +42,11 @@ if (!('serviceWorker' in navigator)) {
 function requestPermission() {
   if ('Notification' in window) {
     Notification.requestPermission().then(function (result) {
-      if (result === 'denied') {
-        console.log('Fitur notifikasi tidak diijinkan.');
+      if (result === "denied") {
+        console.log("Fitur notifikasi tidak diijinkan.");
         return;
-      } else if (result === 'default') {
-        console.error('Pengguna menutup kotak dialog permintaan ijin.');
+      } else if (result === "default") {
+        console.error("Pengguna menutup kotak dialog permintaan ijin.");
         return;
       }
       navigator.serviceWorker.ready.then(() => {
@@ -54,7 +54,7 @@ function requestPermission() {
           navigator.serviceWorker.getRegistration().then(function (registration) {
             registration.pushManager.subscribe({
               userVisibleOnly: true,
-              applicationServerKey: urlBase64ToUint8Array('BGCfZXgOGgWAJUFjBYNr2vyh7J8siwj-eVxjJGPAp7yQ0BmvgMoUUCxlCa2cFR0wVJUnx78apTduDMw0-QLg_S8')
+              applicationServerKey: urlBase64ToUint8Array("BGCfZXgOGgWAJUFjBYNr2vyh7J8siwj-eVxjJGPAp7yQ0BmvgMoUUCxlCa2cFR0wVJUnx78apTduDMw0-QLg_S8")
             }).then(function (subscribe) {
               console.log('Berhasil melakukan subscribe dengan endpoint: ', subscribe.endpoint);
               console.log('Berhasil melakukan subscribe dengan p256dh key: ', btoa(String.fromCharCode.apply(
