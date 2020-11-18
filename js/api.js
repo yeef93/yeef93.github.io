@@ -96,7 +96,7 @@ function getTeams(getteam) {
 const getKlasemen = "competitions/2021/standings/";
 function getAllKlasemen() {
   if ('caches' in window) {
-    caches.match(base_urlgetKlasemen, API_TOKEN).then(function (response) {
+    caches.match(`${base_url}${getKlasemen}`, API_TOKEN).then(function (response) {
       if (response) {
         response.json().then(function (data) {
           let winner = data.standings[0];
@@ -122,7 +122,7 @@ function getAllKlasemen() {
     })
   }
 
-  fetch(base_urlgetKlasemen, API_TOKEN)
+  fetch(`${base_url}${getKlasemen}`, API_TOKEN)
     .then(status)
     .then(json)
     .then(function (data) {
