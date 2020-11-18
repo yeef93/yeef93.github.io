@@ -55,7 +55,7 @@ function getTeams(getteam) {
                   `;
           });
           document.getElementById('progress').style.display = 'none';
-          document.getElementById("teams").innerHTML = allteamHTML;
+          document.getElementById('teams').innerHTML = allteamHTML;
         })
       }
     })
@@ -86,7 +86,7 @@ function getTeams(getteam) {
         `;
       });
       document.getElementById('progress').style.display = 'none';
-      document.getElementById("teams").innerHTML = allteamHTML;
+      document.getElementById('teams').innerHTML = allteamHTML;
 
     })
     .catch(error);
@@ -115,7 +115,7 @@ function getAllKlasemen() {
                   `;
           });
           document.getElementById('progress').style.display = 'none';
-          document.getElementById("klasemens").innerHTML = klasemenHTML;
+          document.getElementById('klasemens').innerHTML = klasemenHTML;
 
         })
       }
@@ -143,7 +143,7 @@ function getAllKlasemen() {
           `;
       });
       document.getElementById('progress').style.display = 'none';
-      document.getElementById("klasemens").innerHTML = klasemenHTML;
+      document.getElementById('klasemens').innerHTML = klasemenHTML;
 
     })
     .catch(error);
@@ -228,7 +228,7 @@ function getAllTeamsById() {
         `;
         document.getElementById('progress').style.display = 'none';
         // Sisipkan komponen card ke dalam elemen dengan id #content        
-        document.getElementById("body-content").innerHTML = allteambyidHTML;
+        document.getElementById('body-content').innerHTML = allteambyidHTML;
 
         // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
         resolve(data);
@@ -260,7 +260,7 @@ function getTeamById() {
           `;
           document.getElementById('progress').style.display = 'none';
             // Sisipkan komponen card ke dalam elemen dengan id #content
-            document.getElementById("body-content").innerHTML = teamHTML;
+            document.getElementById('body-content').innerHTML = teamHTML;
 
             // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
             resolve(data);
@@ -288,7 +288,7 @@ function getTeamById() {
         `;
         document.getElementById('progress').style.display = 'none';
         // Sisipkan komponen card ke dalam elemen dengan id #content
-        document.getElementById("body-content").innerHTML = teamHTML;
+        document.getElementById('body-content').innerHTML = teamHTML;
         // Kirim objek data hasil parsing json agar bisa disimpan ke indexed db
         resolve(data);
       });
@@ -338,7 +338,7 @@ function getSavedTeams() {
     });
     document.getElementById('progress').style.display = 'none';
     // Sisipkan komponen card ke dalam elemen dengan id #body-content
-    document.getElementById("body-content").innerHTML = teamHTML;
+    document.getElementById('body-content').innerHTML = teamHTML;
 
     let removeButtons = document.querySelectorAll(".removeButton");
     for (let button of removeButtons){
@@ -399,7 +399,7 @@ function getSavedTeamById() {
         `;
         document.getElementById('progress').style.display = 'none';
     // Sisipkan komponen card ke dalam elemen dengan id #content
-    document.getElementById("body-content").innerHTML = teambyidHTML;
+    document.getElementById('body-content').innerHTML = teambyidHTML;
 
   });
 }
