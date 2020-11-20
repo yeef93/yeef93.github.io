@@ -34,7 +34,7 @@ if (workbox) {
     { url: 'https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js', revision: '1' },
   ],
     {
-      ignoreURLParametersMatching: [/.*/]
+      ignoreUrlParametersMatching: [/.*/]
     });
 
   workbox.routing.registerRoute(
