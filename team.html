@@ -22,6 +22,7 @@
   <script src="js/idb.js"></script>
   <script src="js/db.js"></script>
   <script src="sw-register.js"></script>
+  <script src="js/save.js"></script>
   <!-- Navigasi -->
   <nav class="pink lighten-1" role="navigation">
     <div class="nav-wrapper container">
@@ -46,31 +47,6 @@
       <i class="large material-icons">save</i>
     </a>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      const isFromSaved = urlParams.get("saved");
-      const save = document.getElementById("save");
-
-      if (isFromSaved) {
-        // Hide fab jika dimuat dari indexed db
-        save.style.display = 'none';
-        // ambil artikel lalu tampilkan
-        getSavedTeamById();
-      } else {
-        var item = getAllTeamsById();
-      }
-      save.onclick = function () {
-        M.toast({html: 'Tim Berhasil Tersimpan Ke halaman Tim Favorit', classes: 'rounded'});
-        console.log("Tombol FAB di klik.");
-        item.then(function (data) {
-          saveForLater(data);
-          save.style.display = 'none';
-        });
-      };
-    });
-  </script>
-
   <div class="divider"> </div>
 
   <footer class="page-footer teal">
